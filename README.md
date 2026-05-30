@@ -27,11 +27,13 @@ To replicate these execution results, the environment must be configured as foll
 The following sections document the successful runtime execution and structural output of the completed Jupyter Notebook components, displaying the source code and corresponding outputs.
 
 **Exercise 1: Prompt Chaining with a Retry Loop**
+
 This implementation deconstructs a complex instruction pipeline into segmented sequential prompts. A custom validation block acts as a programmatic gate; if the generated output fails strict formatting conditions, an automatic retry loop is instantiated until compliance is verified.
 
 ![Exercise 1 Code and Runtime Output](assets/ex1_prompt_chaining.png)
 
 **Exercise 2: Routing with a 4th Category**
+
 This architecture builds a dynamic classifier that parses user intent and routes execution paths to distinct LLM personas. This specific iteration extends the classification space by incorporating a dedicated "Feature Request" category alongside standard technical and administrative handlers.
 
 # Part 1: Routing Implementation (Code):
@@ -41,6 +43,7 @@ This architecture builds a dynamic classifier that parses user intent and routes
 ![Exercise 2 Output Part 2](assets/ex2_routing_2.png)
 
 **Exercise 3: Parallelization (Building a Guardrail)**
+
 To resolve the latency bottlenecks associated with sequential execution, this workflow utilizes a Python ThreadPoolExecutor. The system triggers concurrent threads: one focuses on answering the primary user query, while a decoupled secondary thread acts as an isolated compliance and safety guardrail.
 
 # Part 1: Parallelization Guardrail (Code):
